@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import TopMems from './pages/TopMems';
+import Error404 from './pages/Error404';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navigation />
+        <main className="content"> 
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/TopMems' element={<TopMems />} />
+          <Route path='*' element={<Error404 />} /> 
+        </Routes>
+        </main>
+        <Footer />
+    </BrowserRouter>
     </div>
   );
 }

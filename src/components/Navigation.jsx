@@ -10,6 +10,9 @@ export default function Navigation() {
                     <NavLink to='/topMems'>TOP</NavLink>
                 </li>
                 <li>
+                    <NavLink to='/addMemeForm'>Dodaj mema</NavLink>
+                </li>
+                <li>
                     <NavLink to='/error404'>Error404</NavLink>
                 </li>
             </ul>

@@ -1,19 +1,34 @@
-import React from "react";
+// TopMems.js
+import React from 'react';
 
-import MemData from "../MemsData";
+export default function TopMems({ memData, onUpvote, onDownvote }) {
+    const topMemes = memData
+    .filter((mem) => mem.upvotes > 5)
+    .sort((a, b) => b.upvotes - a.upvotes);;
 
-export default function TopMems() {
-    const topMemes = MemData.filter((meme) => meme.upvotes > 5);
+    const handleUpvote = (mem) => {
+        onUpvote(mem);
+    };
+
+    const handleDownvote = (mem) => {
+        onDownvote(mem);
+    };
+
     return (
         <div className="top-mems">
-            {topMemes.map((meme) => (
-                <div key={meme.title}>
-                <h2>{meme.title}</h2>
-                <img src={meme.imageUrl} alt={meme.title} />
-                <p>Upvotes: {meme.upvotes}</p>
-                <p>Downvotes: {meme.downvotes}</p>
-                </div>
-            ))}
+        {topMemes.map((mem) => (
+            <div key={mem.title}>
+            <h2>{mem.title}</h2>
+            <img src={mem.imageUrl} alt={mem.title} />
+            <p>Upvotes: {mem.upvotes}</p>
+            <p>Downvotes: {mem.downvotes}</p>
+            <div className="buttons">
+                <button onClick={() => handleUpvote(mem)}>Upvote</button>
+                <button onClick={() => handleDownvote(mem)}>Downvote</button>
+            </div>
+            </div>
+        ))}
         </div>
     );
 }
+

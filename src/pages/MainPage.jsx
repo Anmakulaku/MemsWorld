@@ -1,53 +1,27 @@
-import React, {useState} from 'react';
-import MemsData from "../MemsData";
 
-export default function MainPage() {
-    const [memData, setMemsData] = useState(MemsData);
+import React from 'react';
 
-    const filteredMems = memData.filter((mem) => mem.upvotes <= 5);
-    
-
-    const handleUpvote = (mem) => {
-        setMemsData((prevMemsData) => {
-            const updatedMemsData = prevMemsData.map((m) => {
-            if (m.title === mem.title) {
-                return { ...m, upvotes: m.upvotes + 1 };
-            }
-            return m;
-            });
-            return updatedMemsData;
-        });
-    };
-    
-    const handleDownvote = (mem) => {
-        setMemsData((prevMemsData) => {
-            const updatedMemsData = prevMemsData.map((m) => {
-            if (m.title === mem.title) {
-                return { ...m, downvotes: m.downvotes + 1 };
-            }
-            return m;
-            });
-            return updatedMemsData;
-        });
-    };
-    
+export default function MainPage({ memData, onUpvote, onDownvote }) {
+    const filteredMems = memData
+    .filter((mem) => mem.upvotes <= 5)
+    .sort((a, b) => b.upvotes - a.upvotes);
 
     return (
         <div>
-            {filteredMems.map((meme) => (
-                <div key={meme.title}>
-                    <h2>{meme.title}</h2>
-                    <img src={meme.imageUrl} alt={meme.title} />
-                    <div className="votes">
-                        <p>Upvotes: {meme.upvotes}</p>
-                        <p>Downvotes: {meme.downvotes}</p>
-                    </div>
-                    <div className="buttons">
-                        <button onClick={() => handleUpvote(meme)}>Upvote</button>
-                        <button onClick={() => handleDownvote(meme)}>Downvote</button>
-                    </div>
-                    </div>
-            ))}
+        {filteredMems.map((mem) => (
+            <div key={mem.title}>
+            <h2>{mem.title}</h2>
+            <img src={mem.imageUrl} alt={mem.title} />
+            <div className="votes">
+                <p>Upvotes: {mem.upvotes}</p>
+                <p>Downvotes: {mem.downvotes}</p>
+            </div>
+            <div className="buttons">
+                <button onClick={() => onUpvote(mem)}>Upvote</button>
+                <button onClick={() => onDownvote(mem)}>Downvote</button>
+            </div>
+            </div>
+        ))}
         </div>
     );
 }

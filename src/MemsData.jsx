@@ -1,7 +1,7 @@
 const memsData = [
     {
         title: "Meme 1",
-        upvotes: 4,
+        upvotes: 2,
         downvotes: 2,
         imageUrl: '/img/mem1.jpg',
     },
@@ -13,18 +13,18 @@ const memsData = [
     },
     {
         title: "Meme 3",
-        upvotes: 12,
+        upvotes: 4,
         downvotes: 5,
         imageUrl: '/img/mem3.jpg',
     },
     {
         title: "Meme 4",
-        upvotes: 17,
+        upvotes: 7,
         downvotes: 9,
         imageUrl: '/img/mem4.jpg',
     }, {
         title: "Meme 5",
-        upvotes: 26,
+        upvotes: 3,
         downvotes: 2,
         imageUrl: '/img/mem5.jpg',
     }, {
@@ -34,7 +34,7 @@ const memsData = [
         imageUrl: '/img/mem6.jpg',
     }, {
         title: "Meme 7",
-        upvotes: 22,
+        upvotes: 9,
         downvotes: 3,
         imageUrl: '/img/mem7.jpg',
     }, {
@@ -49,7 +49,7 @@ const memsData = [
         imageUrl: '/img/mem9.jpg',
     }, {
         title: "Meme 10",
-        upvotes: 7,
+        upvotes: 15,
         downvotes: 0,
         imageUrl: '/img/mem10.jpg',
     },
@@ -70,7 +70,7 @@ const memsData = [
         imageUrl: '/img/mem13.jpg',
     }, {
         title: "Meme 14",
-        upvotes: 8,
+        upvotes:13,
         downvotes: 2,
         imageUrl: '/img/mem14.jpg',
     }, {

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Anmakulaku/MemsWorld/static/css/main.1bf0b994.css",
+    "main.js": "/Anmakulaku/MemsWorld/static/js/main.7b0830fc.js",
+    "static/js/787.fa883bbb.chunk.js": "/Anmakulaku/MemsWorld/static/js/787.fa883bbb.chunk.js",
+    "index.html": "/Anmakulaku/MemsWorld/index.html",
+    "main.1bf0b994.css.map": "/Anmakulaku/MemsWorld/static/css/main.1bf0b994.css.map",
+    "main.7b0830fc.js.map": "/Anmakulaku/MemsWorld/static/js/main.7b0830fc.js.map",
+    "787.fa883bbb.chunk.js.map": "/Anmakulaku/MemsWorld/static/js/787.fa883bbb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1bf0b994.css",
+    "static/js/main.7b0830fc.js"
+  ]
+}

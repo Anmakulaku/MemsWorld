@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage":  "https://github.com/Anmakulaku/MemsWorld",
+  "homepage": "https://anmakulaku.github.io/MemsWorld/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

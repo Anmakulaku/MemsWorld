@@ -1,7 +1,8 @@
 import {NavLink} from "react-router-dom";
 import Logo from "./Logo";
 
-export default function Navigation() {
+
+export default function Navigation( {onAddMeme}) {
     return (
         <div className="navigation">
             <Logo />
@@ -10,10 +11,7 @@ export default function Navigation() {
                     <NavLink to='/topMems'>TOP</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/addMemeForm'>Dodaj mema</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/error404'>Error404</NavLink>
+                    <NavLink to='/addMemeForm' onAddMeme={onAddMeme} >Dodaj mema</NavLink>
                 </li>
             </ul>
         </div>

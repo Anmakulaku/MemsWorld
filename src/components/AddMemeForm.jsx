@@ -1,17 +1,18 @@
-// AddMemeForm.js
+
 import React, { useState } from 'react';
 
-export default function AddMemeForm({ onAddMeme }) {
+
+export default function AddMemeForm( {onAddMeme} ) {
     const [title, setTitle] = useState('');
     const [imageUrl, setImageUrl] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newMeme = {
-        title,
-        imageUrl,
-        upvotes: 0,
-        downvotes: 0,
+            title,
+            imageUrl: imageUrl,
+            upvotes: 0,
+            downvotes: 0,
         };
         onAddMeme(newMeme);
         setTitle('');
@@ -19,20 +20,27 @@ export default function AddMemeForm({ onAddMeme }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-        <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-            type="text"
-            placeholder="Image URL"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-        />
-        <button type="submit">Add Meme</button>
-        </form>
+        <div className="form-container">
+            <div className='form-background'>
+                <form onSubmit={handleSubmit}>
+                <span>Jesteś niezalogowany, więc dodany przez Ciebie mem musi poczekać na akceptację przez moderatora. Nie będziesz mógł go edytować, ani usunąć. Zaloguj się, aby dodawać memy szybciej i móc je modyfikować. </span>
+                <h2>Tytuł:</h2>
+                <input
+                    type="text"
+                    placeholder="Title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <h2>Żródło obrazka:</h2>
+                <input
+                    type="text"
+                    placeholder="Image URL"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
+                />
+                <button type="submit" className='add-mem'>Dodaj mema</button>
+                </form>
+            </div>
+        </div>
     );
 }

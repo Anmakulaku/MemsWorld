@@ -1,10 +1,12 @@
-// TopMems.js
+
 import React from 'react';
+import UpvoteIcon from '../components/UpvoteIcon';
+import DownvoteIcon from '../components/DownvoteIcon';
 
 export default function TopMems({ memData, onUpvote, onDownvote }) {
     const topMemes = memData
-    .filter((mem) => mem.upvotes > 5)
-    .sort((a, b) => b.upvotes - a.upvotes);;
+    .filter((mem) => mem.upvotes - mem.downvotes > 5)
+    .sort((a, b) => (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes));
 
     const handleUpvote = (mem) => {
         onUpvote(mem);
@@ -15,19 +17,30 @@ export default function TopMems({ memData, onUpvote, onDownvote }) {
     };
 
     return (
-        <div className="top-mems">
-        {topMemes.map((mem) => (
-            <div key={mem.title}>
-            <h2>{mem.title}</h2>
-            <img src={mem.imageUrl} alt={mem.title} />
-            <p>Upvotes: {mem.upvotes}</p>
-            <p>Downvotes: {mem.downvotes}</p>
-            <div className="buttons">
-                <button onClick={() => handleUpvote(mem)}>Upvote</button>
-                <button onClick={() => handleDownvote(mem)}>Downvote</button>
-            </div>
-            </div>
-        ))}
+        <div className="background-container">
+            {topMemes.map((mem) => (
+                <div className="mem-container">
+                        <div key={mem.title}>
+                        <h1>{mem.title}</h1>
+                        <img src={mem.imageUrl} alt={mem.title} className='mem-img'/>
+                        <div className="votes-box">
+                        <div className="votes">
+                            <p className='plus'>{mem.upvotes}</p>
+                            <p>/</p>
+                            <p className='minus'>{mem.downvotes}</p>
+                        </div>
+                    </div>
+                        <div className="buttons">
+                            <button onClick={() => handleUpvote(mem)} className="icon">
+                            <UpvoteIcon />
+                            </button>
+                            <button onClick={() => handleDownvote(mem)} className="icon">
+                            <DownvoteIcon />
+                            </button>
+                        </div>
+                        </div>
+                </div>
+            ))}
         </div>
     );
 }

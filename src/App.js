@@ -15,7 +15,7 @@ import AddMemeForm from './components/AddMemeForm';
 function App() {
   const [memData, setMemsData] = useState(MemsData);
 
-  const handleUpvote = (mem) => {
+    const handleUpvote = (mem) => {
     setMemsData((prevMemsData) => {
       const updatedMemsData = prevMemsData.map((m) => {
         if (m.title === mem.title) {
@@ -38,22 +38,24 @@ function App() {
       return updatedMemsData;
     });
   };
-
+  const handleAddMeme = (newMeme) => {
+    setMemsData((prevMemsData) => [...prevMemsData, newMeme]);
+  };
   return (
     <div className="App">
       <BrowserRouter>
-        <Navigation />
+        <Navigation  />
         <main className="content">
           <Routes>
             <Route path="/" element={
                 <MainPage memData={memData} onUpvote={handleUpvote} onDownvote={handleDownvote} />
-              } />
+            } />
             <Route path="/TopMems" element={
                 <TopMems memData={memData} onUpvote={handleUpvote} onDownvote={handleDownvote} />
-              }
-            />
+            } />
             <Route path="*" element={<Error404 />} />
-            <Route path="/AddMemeForm" element={<AddMemeForm />} />
+            <Route path="/AddMemeForm" element={<AddMemeForm onAddMeme={handleAddMeme} />
+            } />
           </Routes>
         </main>
         <Footer />

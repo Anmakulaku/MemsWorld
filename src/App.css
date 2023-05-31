@@ -1,12 +1,14 @@
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
   margin: 0;
   background-color:#212121;
+  height: 100vh;
 }
 .content {
   background-color:#212121;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .navigation{
@@ -19,6 +21,8 @@
   position: fixed;
   top: 0;
   margin: 0;
+  z-index: 3;
+  border-bottom: #ffd740 4px solid;
 }
 .logo-box {
   height: 50px;
@@ -27,7 +31,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-right: #ffd740 1px solid;
+  border-right: #ffd740 4px solid;
   padding: 0 10px;
 }
   .logo {
@@ -71,11 +75,134 @@
 main{
   margin-top: 50px;
 }
+.background-container{
+  max-width: 900px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #4242428a;
+  padding: 5px 0;
+}
+.mem-container {
+  max-width: 610px;
+  position: relative;
+  margin: 0 auto 10px auto;
+  background-color: #000000d0;
+  padding: 0  20px 10px 20px;
+  margin-bottom: 20px;
+}
+  h1 {
+    padding-top: 10px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #ffd740;
+  }
+  .mem-img{
+    max-width: 610px;
+    height: auto;
+  }
+  .votes-box{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+  }
+  .votes{
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-around;
+    padding: 2px 15px;
+    width: 110px;
+    background-color: #4242428a;
+    border-radius: 5px;
+  }
+  .plus{
+    color: #64DD17;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .minus{
+    color: #F44336;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin: 5px 0; 
+  }
+    .icon{
+      width: 70px;
+      height: 45px;
+      background-color: #ffd740;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px;
+      
+    }
+.voteIcon{
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+}
+p{
+  color: #F5F5F5;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin:0;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  
+}
+.form-background{
+  border-radius: 10px;
+  max-height: 500px;
+  width: 500px;
+  background-color: #4242428a;
+  margin-top: 40px;
+}
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 20px;
+}
+span{
+  color: #F5F5F5;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-align: justify;
+  margin:0;
+}
+h2{
+  color: #ffd740;
+}
+input{
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 transparent;
+}
+.add-mem{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  max-width: 150px;
+  margin: 20px 0 10px 0;
+  background-color: #ffd740;
+}
+.add-mem:hover{
+  font-weight: bold;
+}
 .footer {
   background-color:#212121;
   padding: 20px;
+  text-align: center;
 }
-  .footer p {
+  .footer-content {
     margin: 0;
     align-items: center;
     font-size: small;
@@ -107,6 +234,9 @@ main{
 
 
 @media (max-width: 768px) {
+  .navigation{
+    border-bottom: #ffd740 2px solid;
+  }
     .logo-box {
       height: 30px;
       width: 100px;
@@ -114,11 +244,56 @@ main{
       position: relative;
       margin-top: auto;
       margin-bottom: auto;
+      border-right: #ffd740 2px solid;
+      z-index: 3;
     }
     .logo {
       width: 100px;
       height: auto;
     }
+    .background-container{
+      max-width: 500px;
+      position: relative;
+      top: 0;
+    }
+    .mem-container {
+      max-width: 360px;
+      
+    }
+      h1 {
+        font-size: 16px;
+      }
+      .mem-img{
+        max-width: 350px;
+        height: auto;
+      }
+      .votes{
+        margin: 0 8px;
+        padding: 2px 14px;
+        width: 70px;
+      }
+      .plus{
+        font-size: 12px;
+      }
+      .minus{
+        font-size: 12px;
+      }
+      .buttons{
+        margin: 6px;
+      }
+        .icon{
+          width: 50px;
+          height: 25px;
+        }
+    .voteIcon{
+      width: 15px;
+      height: 15px;
+      margin-top: 0;
+    }
+    p{
+      font-size: 12px;
+    }
+  
   .error-404-content{
     max-width:360px;
     position: relative;

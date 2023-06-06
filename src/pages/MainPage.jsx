@@ -23,16 +23,12 @@ export default function MainPage({ memData, onUpvote, onDownvote }) {
                         </div>
                     </div>
                     <div className="buttons">
-                        <div>
-                            <button onClick={() => onUpvote(mem)} className="icon">
-                            <UpvoteIcon />
-                            </button>
-                        </div>
-                        <div>
-                            <button onClick={() => onDownvote(mem)} className="icon">
-                            <DownvoteIcon />
-                            </button>
-                        </div>
+                        <button onClick={() => onUpvote(mem)} className="icon">
+                        <UpvoteIcon />
+                        </button>
+                        <button onClick={() => onDownvote(mem)} className="icon">
+                        <DownvoteIcon />
+                        </button>
                     </div>
                 </div>
             ))}

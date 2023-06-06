@@ -31,7 +31,7 @@ export default function AddMemeForm( {onSubmit} ) {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <h2>Żródło obrazka:</h2>
+                <h2>Źródło obrazka:</h2>
                 <input
                     type="text"
                     placeholder="Image URL"

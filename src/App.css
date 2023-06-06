@@ -90,7 +90,7 @@ main{
   padding: 0  20px 10px 20px;
   margin-bottom: 20px;
 }
-  h1 {
+  .mem-title {
     padding-top: 10px;
     margin-left: 5px;
     font-weight: bold;

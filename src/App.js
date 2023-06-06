@@ -9,9 +9,6 @@ import Footer from './components/Footer';
 import MemsData from './MemsData';
 import AddMemeForm from './components/AddMemeForm';
 
-
-
-
 function App() {
   const [memData, setMemsData] = useState(MemsData);
 
@@ -54,7 +51,7 @@ function App() {
                 <TopMems memData={memData} onUpvote={handleUpvote} onDownvote={handleDownvote} />
             } />
             <Route path="*" element={<Error404 />} />
-            <Route path="/AddMemeForm" element={<AddMemeForm onAddMeme={handleAddMeme} />
+            <Route path="/AddMemeForm" element={<AddMemeForm onSubmit={handleAddMeme} />
             } />
           </Routes>
         </main>

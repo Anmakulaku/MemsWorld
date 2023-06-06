@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-export default function AddMemeForm( {onAddMeme} ) {
+export default function AddMemeForm( {onSubmit} ) {
     const [title, setTitle] = useState('');
     const [imageUrl, setImageUrl] = useState('');
 
@@ -14,7 +14,7 @@ export default function AddMemeForm( {onAddMeme} ) {
             upvotes: 0,
             downvotes: 0,
         };
-        onAddMeme(newMeme);
+        onSubmit(newMeme);
         setTitle('');
         setImageUrl('');
     };

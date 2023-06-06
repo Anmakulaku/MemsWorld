@@ -2,6 +2,7 @@
 import React from 'react';
 import UpvoteIcon from '../components/UpvoteIcon';
 import DownvoteIcon from '../components/DownvoteIcon';
+import {v4 as uuidv4} from 'uuid';
 
 export default function TopMems({ memData, onUpvote, onDownvote }) {
     const topMemes = memData
@@ -19,9 +20,8 @@ export default function TopMems({ memData, onUpvote, onDownvote }) {
     return (
         <div className="background-container">
             {topMemes.map((mem) => (
-                <div className="mem-container">
-                        <div key={mem.title}>
-                        <h1>{mem.title}</h1>
+                <div className="mem-container" key={uuidv4()}>
+                        <div className='mem-title'>{mem.title}</div>
                         <img src={mem.imageUrl} alt={mem.title} className='mem-img'/>
                         <div className="votes-box">
                         <div className="votes">
@@ -37,7 +37,6 @@ export default function TopMems({ memData, onUpvote, onDownvote }) {
                             <button onClick={() => handleDownvote(mem)} className="icon">
                             <DownvoteIcon />
                             </button>
-                        </div>
                         </div>
                 </div>
             ))}

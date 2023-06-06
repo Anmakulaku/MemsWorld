@@ -11,7 +11,7 @@ export default function Navigation( {onAddMeme}) {
                     <NavLink to='/topMems'>TOP</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/addMemeForm' onAddMeme={onAddMeme} >Dodaj mema</NavLink>
+                    <NavLink to='/addMemeForm' onSubmit={onsubmit} >Dodaj mema</NavLink>
                 </li>
             </ul>
         </div>
